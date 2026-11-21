@@ -15,10 +15,10 @@ import { DIM_REFS, OPENING_DIM_REFS, type DimRef, type OpeningDimRef } from '../
 import { DEFAULT_NAV_STYLE, NAV_STYLE_IDS, type NavStyleId } from './navStyle';
 
 /** The looks the interface wears: paper and graphite (Lapin's own), classic (a neutral grey desktop look), contrast (high contrast). */
-export type ThemeName = 'paper' | 'graphite' | 'classic' | 'contrast';
-export type LightTheme = Exclude<ThemeName, 'graphite'>;
-export const LIGHT_THEMES: readonly LightTheme[] = ['paper', 'classic', 'contrast'];
-export const THEME_NAMES: readonly ThemeName[] = ['paper', 'graphite', 'classic', 'contrast'];
+export type ThemeName = 'paper' | 'graphite' | 'classic' | 'contrast' | 'light-professional' | 'dark-technical' | 'graphite-neutral';
+export type LightTheme = Exclude<ThemeName, 'graphite' | 'dark-technical' | 'graphite-neutral'>;
+export const LIGHT_THEMES: readonly LightTheme[] = ['paper', 'classic', 'contrast', 'light-professional'];
+export const THEME_NAMES: readonly ThemeName[] = ['paper', 'graphite', 'classic', 'contrast', 'light-professional', 'dark-technical', 'graphite-neutral'];
 export type ThemeChoice = ThemeName | 'system';
 /** The look of the drawing areas (3D, plans, sections, sheets) apart from the panels: as the panels (the default), or paper or graphite whatever they wear. */
 export type ViewportTheme = 'same' | 'paper' | 'graphite';
@@ -160,7 +160,7 @@ export function setPrefs(patch: Partial<Prefs>): void {
 
 /** What the sun/moon button switches to: a light theme goes to dark (the choice is kept as the last light one), dark returns to it. */
 export function quickToggleTheme(current: ThemeName, lastLight: LightTheme): ThemeName {
-  return current === 'graphite' ? lastLight : 'graphite';
+  return current === 'graphite' || current === 'dark-technical' || current === 'graphite-neutral' ? lastLight : 'graphite';
 }
 
 /** The theme a choice shows now (the system's: dark when it asks for dark). */
