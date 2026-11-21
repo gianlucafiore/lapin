@@ -49,6 +49,17 @@ describe('theme contrast', () => {
     expect(ratio(t['accent-ink'], t.accent)).toBeGreaterThanOrEqual(4.5);
     expect(ratio(t.ink, t['accent-wash'])).toBeGreaterThanOrEqual(7);
   });
+  it('additional professional palettes keep UI text readable on all main surfaces', () => {
+    for (const name of ['light-professional', 'dark-technical', 'graphite-neutral']) {
+      const t = tokens(name);
+      for (const surface of [t.bg, t.panel, t.raised, t.wash]) {
+        expect(ratio(t.ink, surface), `${name}: body text`).toBeGreaterThanOrEqual(4.5);
+        expect(ratio(t['ink-muted'], surface), `${name}: secondary text`).toBeGreaterThanOrEqual(4.5);
+        expect(ratio(t.accent, surface), `${name}: accent`).toBeGreaterThanOrEqual(4.5);
+      }
+      expect(ratio(t['accent-ink'], t.accent), `${name}: accent label`).toBeGreaterThanOrEqual(4.5);
+    }
+  });
   it('the ratio helper matches known values', () => {
     expect(ratio('#000000', '#ffffff')).toBeCloseTo(21, 1);
     expect(ratio('#777777', '#ffffff')).toBeCloseTo(4.48, 1);
