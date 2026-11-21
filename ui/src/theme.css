@@ -19,6 +19,34 @@
   --trace-snap: #4cc27e; --trace-locked: #79aef0; --trace-tracking: var(--accent); --trace-free: #b3ab9c;
   color-scheme: dark;
 }
+
+/*
+ * Optional neutral UI palettes. Keep the original Lapin themes unchanged.
+ * All three use the existing semantic tokens so dialogs, ribbon, panels and
+ * controls inherit the selection without duplicating component styles.
+ */
+[data-theme="light-professional"] {
+  --bg: #f4f6f9; --panel: #e9edf3; --raised: #ffffff; --wash: #dde5ee; --rule: #cbd5e1; --rule-strong: #9aaabc;
+  --ink: #1e293b; --ink-muted: #475569; --accent: #315f98; --accent-ink: #ffffff; --accent-wash: #dce9f8;
+  --hud: rgba(248, 250, 252, 0.94); --hud-glass: rgba(248, 250, 252, 0.66); --ok: #187346; --err: #b42318;
+  --trace-snap: #187346; --trace-locked: #315f98; --trace-tracking: var(--accent); --trace-free: #64748b;
+  color-scheme: light;
+}
+[data-theme="dark-technical"] {
+  --bg: #171d25; --panel: #202833; --raised: #293341; --wash: #354151; --rule: #455264; --rule-strong: #627186;
+  --ink: #edf3f9; --ink-muted: #b5c3d2; --accent: #83b4df; --accent-ink: #142333; --accent-wash: #304c66;
+  --hud: rgba(26, 34, 45, 0.93); --hud-glass: rgba(26, 34, 45, 0.65); --ok: #83cca2; --err: #ffa199;
+  --trace-snap: #83cca2; --trace-locked: #83b4df; --trace-tracking: var(--accent); --trace-free: #b5c3d2;
+  color-scheme: dark;
+}
+[data-theme="graphite-neutral"] {
+  --bg: #282f31; --panel: #333b3d; --raised: #3d4749; --wash: #475153; --rule: #566163; --rule-strong: #718080;
+  --ink: #f0f2ef; --ink-muted: #c0cbc6; --accent: #9bc9b5; --accent-ink: #182c25; --accent-wash: #40584e;
+  --hud: rgba(45, 54, 55, 0.94); --hud-glass: rgba(45, 54, 55, 0.67); --ok: #9bc9b5; --err: #ffaaa0;
+  --trace-snap: #9bc9b5; --trace-locked: #a6c7e2; --trace-tracking: var(--accent); --trace-free: #c0cbc6;
+  color-scheme: dark;
+}
+
 /*
  * Previews are drawings on paper (report #110, decision 387): a configurator's plan, section, elevation or profile, a tag's
  * or a title block's preview, in both themes on a light card with the paper theme's ink and rules, as the engine draws them
