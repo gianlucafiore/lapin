@@ -83,7 +83,7 @@ function LibrariesPage() {
   </>;
 }
 const VIEWPORT_CHOICES: { id: ViewportTheme; label: string }[] = [{ id: 'same', label: 'Same as the panels' }, { id: 'paper', label: 'Paper (light)' }, { id: 'graphite', label: 'Graphite (dark)' }];
-const THEMES: { id: ThemeChoice; label: string }[] = [{ id: 'paper', label: 'Light theme' }, { id: 'graphite', label: 'Dark theme' }, { id: 'classic', label: 'Classic theme' }, { id: 'contrast', label: 'High contrast theme' }, { id: 'system', label: 'As the system' }];
+const THEMES: { id: ThemeChoice; label: string }[] = [{ id: 'paper', label: 'Light theme' }, { id: 'graphite', label: 'Dark theme' }, { id: 'classic', label: 'Classic theme' }, { id: 'contrast', label: 'High contrast theme' }, { id: 'light-professional', label: 'Light Professional' }, { id: 'dark-technical', label: 'Dark Technical' }, { id: 'graphite-neutral', label: 'Graphite Neutral' }, { id: 'system', label: 'As the system' }];
 const DISPLAY: { key: keyof Display; label: string }[] = [
   { key: 'grid', label: 'Grid in plans and 3D (F7)' },
   { key: 'thinLines', label: 'Thin lines (TL)' },
