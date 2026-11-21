@@ -121,6 +121,17 @@ describe('themes: classic and high contrast', () => {
     expect(quickToggleTheme('graphite', 'contrast')).toBe('contrast');
     expect(quickToggleTheme('graphite', 'paper')).toBe('paper');
   });
+  it('loads and persists the three optional palettes without losing a light fallback', () => {
+    for (const theme of ['light-professional', 'dark-technical', 'graphite-neutral'] as const) {
+      expect(readPrefs({ theme }).theme).toBe(theme);
+      expect(resolveTheme(theme)).toBe(theme);
+    }
+    expect(readPrefs({ theme: 'light-professional' }).lastLight).toBe('light-professional');
+    expect(readPrefs({ theme: 'graphite-neutral', lastLight: 'light-professional' }).lastLight).toBe('light-professional');
+    expect(quickToggleTheme('dark-technical', 'light-professional')).toBe('light-professional');
+    expect(quickToggleTheme('graphite-neutral', 'paper')).toBe('paper');
+    expect(quickToggleTheme('light-professional', 'light-professional')).toBe('graphite');
+  });
   it('keeps the viewport theme only if known, and defaults to following the panels', () => {
     expect(readPrefs(null).viewportTheme).toBe('same');
     expect(readPrefs({ viewportTheme: 'paper' }).viewportTheme).toBe('paper');
