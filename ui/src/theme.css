@@ -41,7 +41,7 @@
 }
 [data-theme="graphite-neutral"] {
   --bg: #282f31; --panel: #333b3d; --raised: #3d4749; --wash: #475153; --rule: #566163; --rule-strong: #718080;
-  --ink: #f0f2ef; --ink-muted: #c0cbc6; --accent: #9bc9b5; --accent-ink: #182c25; --accent-wash: #40584e;
+  --ink: #f0f2ef; --ink-muted: #c0cbc6; --accent: #a1d0bb; --accent-ink: #182c25; --accent-wash: #40584e;
   --hud: rgba(45, 54, 55, 0.94); --hud-glass: rgba(45, 54, 55, 0.67); --ok: #9bc9b5; --err: #ffaaa0;
   --trace-snap: #9bc9b5; --trace-locked: #a6c7e2; --trace-tracking: var(--accent); --trace-free: #c0cbc6;
   color-scheme: dark;
